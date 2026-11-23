@@ -1,0 +1,21 @@
+# Name of the actions 
+name: CI
+
+# Triggering on pushing 
+on: 
+   push: 
+     branches: [ "main" ]
+   pull_request:
+     branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Tester
+      - name: Runs a single command using runner's shell
+        run: echo Hello, World!
+      
+      
