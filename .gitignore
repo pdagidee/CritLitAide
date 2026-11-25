@@ -1,3 +1,4 @@
 .env
 .Notes4Development 
 .node_modules
+node_modules/
