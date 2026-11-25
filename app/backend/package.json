@@ -2,9 +2,10 @@
   "name": "critlitaide",
   "version": "1.0.0",
   "description": "Repository for my COMP3000 final year dissertation project focused on using LLMs to aid the development of key skills needed for emerging writers.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/pdagidee/CritLitAide/issues"
   },
@@ -21,5 +22,6 @@
   "dependencies": {
     "express": "^5.3.0",
     "pg": "^8.23.1"
-  }
+  },
+  "devDependencies": {}
 }

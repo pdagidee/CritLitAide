@@ -1,0 +1,13 @@
+services:
+  backend:
+    image: node:26
+    container_name: critlit_backend
+    working_dir: /app/backend
+    volumes:
+      - ./app/backend:/app/backend
+    env_file: .env
+    ports:
+      - "3000:3000"
+    command: node server.js
+    
+    
