@@ -1,4 +1,5 @@
 services:
+
   backend:
     image: node:26
     container_name: critlit_backend
@@ -9,6 +10,9 @@ services:
     ports:
       - "3000:3000"
     command: node server.js
+    depends_on:
+      db:
+        condition: service_healthy
   db: 
     image: postgres:17
     container_name: critlit_db
@@ -20,6 +24,11 @@ services:
       - "5432:5432"
     volumes: 
       - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   db_data:
