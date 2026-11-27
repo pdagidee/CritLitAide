@@ -1,4 +1,4 @@
-import UserService from './services/UserService.js';
+import UserService from '../services/UserService.js';
 
 const createUser = async (req, res) => {
     const userData = await UserService.createUser(req.body);
@@ -18,7 +18,7 @@ const getUserById = async (req, res) => {
     res.json(user);
 };
 
-module.exports = {
+export default {
     createUser,
     getAllUsers,
     getUserById

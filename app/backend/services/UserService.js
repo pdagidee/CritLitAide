@@ -15,7 +15,7 @@ async function getUserById(id) {
     return await User.findByPk(id);
 }
 
-module.exports = {
+export default {
     createUser,
     getAllUsers,
     getUserById

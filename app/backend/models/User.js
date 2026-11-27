@@ -5,9 +5,10 @@ const User = sequelize.define(
     'User', 
     {
         id : {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             allowNull: false,
             primaryKey: true,
+            defaultValue: DataTypes.UUIDV4
         },
 
         username: {
@@ -42,7 +43,9 @@ const User = sequelize.define(
             allowNull: false,
             defaultValue: 'user',
         },
+    },
 
+    {       
         timestamps: true,
         createdAt: true,
         updatedAt: true,
